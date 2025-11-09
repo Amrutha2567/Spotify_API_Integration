@@ -1,36 +1,89 @@
-# wrappy
+Spotify API Integration
 
-Callback wrapping utility
+This project creates a backend endpoint /api/spotify that connects to the Spotify Web API to display:
 
-## USAGE
+Your Top 10 Tracks
 
-```javascript
-var wrappy = require("wrappy")
+Your Currently Playing Song
 
-// var wrapper = wrappy(wrapperFunction)
+The Artists You Follow
 
-// make sure a cb is called only once
-// See also: http://npm.im/once for this specific use case
-var once = wrappy(function (cb) {
-  var called = false
-  return function () {
-    if (called) return
-    called = true
-    return cb.apply(this, arguments)
-  }
-})
+Controls to Start or Stop playback
 
-function printBoo () {
-  console.log('boo')
-}
-// has some rando property
-printBoo.iAmBooPrinter = true
+The endpoint returns JSON (no frontend UI required) and is deployed on your portfolio website at
+👉 https://yatharthbansal.com/api/spotify
 
-var onlyPrintOnce = once(printBoo)
+🚀 Features
 
-onlyPrintOnce() // prints 'boo'
-onlyPrintOnce() // does nothing
+Fetch Top 10 Spotify Tracks of the authenticated user
 
-// random property is retained!
-assert.equal(onlyPrintOnce.iAmBooPrinter, true)
-```
+Display the Currently Playing Song
+
+List all Followed Artists
+
+Start or Stop a selected track
+
+Output in clean, browser-friendly JSON
+
+🧰 Tech Stack
+
+Node.js / Express.js – API server
+
+Spotify Web API – Data source
+
+Vercel – Deployment platform
+
+dotenv – Environment configuration
+
+⚙️ Setup Instructions
+1. Clone the Repository
+git clone https://github.com/amruthavanaparthi/spotify-api-integration.git
+cd spotify-api-integration
+
+2. Install Dependencies
+npm install
+
+3. Create a .env File
+
+Add the following inside .env:
+
+SPOTIFY_CLIENT_ID=your_spotify_client_id
+SPOTIFY_CLIENT_SECRET=your_spotify_client_secret
+SPOTIFY_REFRESH_TOKEN
+
+
+⚠️ Do not commit .env to GitHub.
+
+4. Start the Server Locally
+npm run dev
+
+
+Visit → http://localhost:3000/api/spotify
+
+🌐 Deployment
+
+Deploy to Vercel
+ (recommended)
+
+Add your environment variables in Vercel Dashboard → Settings → Environment Variables
+
+Once deployed, your live endpoint will be available at:
+
+https://your-portfolio-domain.com/api/spotify
+
+🕒 Time Breakdown
+Task	Duration
+Spotify App Setup	30 mins
+OAuth & Token Handling	1 hr 30 mins
+API Endpoint Development	1 hr
+Testing & Debugging	45 mins
+Deployment	30 mins
+Final Verification	15 mins
+💡 Challenges Faced
+
+The biggest challenge was implementing Spotify’s OAuth 2.0 flow — generating and refreshing tokens securely. Managing short-lived access tokens and ensuring smooth API calls required careful handling.
+
+📄 License
+
+This project is open-sourced under the MIT License
+.
