@@ -85,4 +85,4 @@ The biggest challenge was implementing Spotify’s OAuth 2.0 flow — generating
 
 📄 License
 
-This project is open-sourced under the MIT Licens.
+This project is open-sourced under the MIT License.
