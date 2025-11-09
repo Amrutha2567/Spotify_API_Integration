@@ -1,0 +1,15 @@
+{
+  "now_playing": {
+    "track": "Paint The Town Red",
+    "artist": "Doja Cat",
+    "album": "Scarlet"
+  },
+  "top_tracks": [
+    {"id": "1234", "name": "Die For You", "artist": "The Weeknd"},
+    {"id": "5678", "name": "As It Was", "artist": "Harry Styles"}
+  ],
+  "followed_artists": [
+    {"id": "a1", "name": "Coldplay"},
+    {"id": "a2", "name": "Taylor Swift"}
+  ]
+}
